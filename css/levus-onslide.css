@@ -121,7 +121,7 @@
   animation: background-show 3s linear forwards 0s;
 }
 
-.levus-content {
+#levus-slider figure {
   width: 1200px;
   height: 530px;
   padding: 100px 0;
@@ -140,14 +140,14 @@
 }
 
 @media(max-width: 1250px) {
-  .levus-content {
+  #levus-slider figure {
     width: 95%;
     padding: 10px;
   }
 }
 
 @media(max-width: 991px) {
-  .levus-content {
+  #levus-slider figure {
     text-align: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
@@ -157,7 +157,7 @@
   }
 }
 
-.levus-content img {
+#levus-slider figure img {
   max-width: 100% !important;
   height: auto !important;
   grid-area: levus-img;
@@ -166,12 +166,12 @@
 }
 
 @media(max-width: 991px) {
-  .levus-content img {
+  #levus-slider figure img {
     margin: auto;
   }
 }
 
-.levus-content p {
+#levus-slider figure figcaption {
   margin: 0 50px 5px;
   line-height: 2;
   text-align: justify;
@@ -183,18 +183,18 @@
 }
 
 @media(max-width:776px) {
-  .levus-content p {
+  #levus-slider figure figcaption {
     margin: 0 10px;
     line-height: 1.7;
   }
 }
 
-.show .levus-content img {
+#levus-slider .show figure img {
   -webkit-animation: img-0 1500ms linear forwards 1s;
   animation: img-0 1500ms linear forwards 1s;
 }
 
-.show .levus-content p {
+#levus-slider .show figure figcaption {
   -webkit-animation: p-1 500ms linear forwards 1s;
   animation: p-1 1500ms linear forwards 1s;
 }
