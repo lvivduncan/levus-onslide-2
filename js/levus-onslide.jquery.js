@@ -1,19 +1,16 @@
 // 7-10-2020
 function levusOnslideJquery(selector){
+    "use strict";
 
-    const articles = $(selector).children('article');
-    const length = $(selector).children('article').length-1;
-    let cnt = 0;
+    var articles = $(selector).children('article');
+    var length = $(selector).children('article').length-1;
+    var cnt = 0;
     
     articles.first().addClass('show');
 
     $(selector).children('#levus-left').on('click', function(){
         setTimeout(function() {
-            if(cnt>=length){
-                cnt = 0; 
-            }else{
-                cnt++;
-            }
+            cnt >= length ? cnt = 0 : cnt++;
             $(articles[cnt]).addClass('show').siblings().removeClass('show');
 
         }, 500);
@@ -21,23 +18,14 @@ function levusOnslideJquery(selector){
 
     $(selector).children('#levus-right').on('click', function(){
         setTimeout(function() {
-            if(cnt>0){
-                cnt--; 
-            }else{
-                cnt = length;
-            }
+            cnt > 0 ? cnt-- : cnt = length;
             $(articles[cnt]).addClass('show').siblings().removeClass('show');
         }, 500);
     });
     
     setInterval(function() {
-        if(cnt>=length){
-            cnt = 0; 
-        }else{
-            cnt++;
-        }
+        cnt >= length ? cnt = 0 : cnt++;
         $(articles[cnt]).addClass('show').siblings().removeClass('show');
-
     }, 8000);
 
 }
