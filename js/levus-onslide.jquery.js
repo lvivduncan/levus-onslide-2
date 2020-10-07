@@ -1,14 +1,13 @@
+// 7-10-2020
+function levusOnslideJquery(selector){
 
-// приймає айдішку
-function levusOnslideJquery(id){
-
-    const articles = $(id).children('article');
-    const length = $(id).children('article').length-1;
+    const articles = $(selector).children('article');
+    const length = $(selector).children('article').length-1;
     let cnt = 0;
     
     articles.first().addClass('show');
 
-    $(id).children('#levus-left').on('click', function(){
+    $(selector).children('#levus-left').on('click', function(){
         setTimeout(function() {
             if(cnt>=length){
                 cnt = 0; 
@@ -20,7 +19,7 @@ function levusOnslideJquery(id){
         }, 500);
     });
 
-    $(id).children('#levus-right').on('click', function(){
+    $(selector).children('#levus-right').on('click', function(){
         setTimeout(function() {
             if(cnt>0){
                 cnt--; 
@@ -29,7 +28,17 @@ function levusOnslideJquery(id){
             }
             $(articles[cnt]).addClass('show').siblings().removeClass('show');
         }, 500);
-    });   
+    });
+    
+    setInterval(function() {
+        if(cnt>=length){
+            cnt = 0; 
+        }else{
+            cnt++;
+        }
+        $(articles[cnt]).addClass('show').siblings().removeClass('show');
+
+    }, 8000);
 
 }
 
